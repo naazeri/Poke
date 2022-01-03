@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy-flying-1.png-7caf3491a0e69928f4e2f9e6d1e7fecc.stex"
+path="res://.import/radial_gradient.jpg-a3253ed14a48677bb309139538dee6c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemy-flying-1.png"
-dest_files=[ "res://.import/enemy-flying-1.png-7caf3491a0e69928f4e2f9e6d1e7fecc.stex" ]
+source_file="res://art/radial_gradient.jpg"
+dest_files=[ "res://.import/radial_gradient.jpg-a3253ed14a48677bb309139538dee6c6.stex" ]
 
 [params]
 

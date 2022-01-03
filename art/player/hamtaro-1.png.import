@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy-swimming-2.png-997ecef3691ba23444867c2ae9d46c59.stex"
+path="res://.import/hamtaro-1.png-5171a31666197c2f13a94e838489fdee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemy-swimming-2.png"
-dest_files=[ "res://.import/enemy-swimming-2.png-997ecef3691ba23444867c2ae9d46c59.stex" ]
+source_file="res://art/player/hamtaro-1.png"
+dest_files=[ "res://.import/hamtaro-1.png-5171a31666197c2f13a94e838489fdee.stex" ]
 
 [params]
 

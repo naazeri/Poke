@@ -44,7 +44,7 @@ func _process(delta):
 #	var is_moving_right = direction.x - last_direction.x > 0
 #	var is_moving_up = direction.y - last_direction.y < 0
 	
-	$AnimatedSprite.animation = "right"
+	$AnimatedSprite.animation = "run"
 
 	if direction.x - last_direction.x != 0:
 		$AnimatedSprite.flip_h = direction.x - last_direction.x < 0

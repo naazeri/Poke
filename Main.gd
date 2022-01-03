@@ -118,6 +118,11 @@ func load_best_score():
 
 
 func _on_ColorTimer_timeout():
-	var newColor = Color(randf(), randf(), randf(), 1.0)
-	$Tween.interpolate_property($ColorRect, "color", $ColorRect.color, newColor, $ColorTimer.wait_time, Tween.TRANS_LINEAR)
+	var newColor1 = Color(randf(), randf(), randf(), 1.0)
+	var newColor2 = Color(randf(), randf(), randf(), 1.0)
+	var newColor3 = Color(randf(), randf(), randf(), 1.0)
+#	$Background1.modulate = newColor
+	$Tween.interpolate_property($Background1, "modulate", $Background1.modulate, newColor1, $ColorTimer.wait_time, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property($Background2, "modulate", $Background2.modulate, newColor2, $ColorTimer.wait_time, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property($Background3, "modulate", $Background3.modulate, newColor3, $ColorTimer.wait_time, Tween.TRANS_LINEAR)
 	$Tween.start()

@@ -13,9 +13,8 @@ config_version=4
 config/name="Poke"
 run/main_scene="res://Main.tscn"
 boot_splash/image="res://icon.png"
-boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
+boot_splash/bg_color=Color( 0.980392, 0.980392, 0.980392, 1 )
 config/icon="res://icon.png"
-config/windows_native_icon="res://icon.ico"
 
 [display]
 
@@ -55,7 +54,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
-vram_compression/import_etc=true
-vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
