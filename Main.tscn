@@ -4,12 +4,12 @@
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://art/house-in-a-forest-loop.ogg" type="AudioStream" id=5]
-[ext_resource path="res://art/game-over.wav" type="AudioStream" id=6]
+[ext_resource path="res://art/background-music-1.ogg" type="AudioStream" id=5]
+[ext_resource path="res://art/boom.wav" type="AudioStream" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400, 0, 0, 0, 0, 0, 400, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400, 0, 0, 0, 0, 0, 400, 720, 0, 0, 0, 0, 198.806, 723.719, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0 )
 }
 
 [node name="Main" type="Node"]
@@ -19,10 +19,12 @@ mob_scene = ExtResource( 2 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.301961, 0.713726, 0.67451, 1 )
+color = Color( 0.309804, 0.764706, 0.968627, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Tween" type="Tween" parent="."]
 
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
@@ -55,7 +57,12 @@ stream = ExtResource( 5 )
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
+[node name="ColorTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="ColorTimer" to="." method="_on_ColorTimer_timeout"]

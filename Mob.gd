@@ -1,8 +1,5 @@
 extends RigidBody2D
 
-export var min_speed = 150.0
-export var max_speed = 250.0
-
 
 func _ready():
 #	randomize()
@@ -10,6 +7,16 @@ func _ready():
 	
 	var mobs_types = $AnimatedSprite.frames.get_animation_names()
 	$AnimatedSprite.animation = mobs_types[randi() % mobs_types.size()]
+
+
+func _process(delta):
+#	$Label.text = "%.1f" % rotation
+	
+	if rotation <= PI and rotation >= PI/2 or rotation >= -PI and rotation <= -PI/2:
+#		$Label.text = "%.1f" % rotation
+		$AnimatedSprite.flip_v = true
+#	else:
+#		$Label.text = ""
 
 
 func _on_VisibilityNotifier2D_screen_exited():
