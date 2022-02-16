@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy-walking-1.png-a268b95b1e7b1794f81c2bd1da57dabe.stex"
+path="res://.import/icon-white.png-18fd928c0870ced736acf349e36e5258.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemy/enemy-walking-1.png"
-dest_files=[ "res://.import/enemy-walking-1.png-a268b95b1e7b1794f81c2bd1da57dabe.stex" ]
+source_file="res://icon-white.png"
+dest_files=[ "res://.import/icon-white.png-18fd928c0870ced736acf349e36e5258.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

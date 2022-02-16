@@ -10,7 +10,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400, 0, 0, 0, 0, 0, 400, 720, 0, 0, 0, 0, 198.806, 723.719, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1280, 0, 0, 0, 0, 0, 1280, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0 )
 }
 
 [node name="Main" type="Node"]
@@ -18,21 +18,18 @@ script = ExtResource( 1 )
 mob_scene = ExtResource( 2 )
 
 [node name="Background1" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 172, 213 )
-scale = Vector2( 6, 6 )
+position = Vector2( -160, -166 )
+scale = Vector2( 7, 7 )
 texture = ExtResource( 7 )
 
 [node name="Background2" type="Sprite" parent="."]
-modulate = Color( 0.266667, 1, 0, 1 )
-position = Vector2( -24, 504 )
-scale = Vector2( 5, 5 )
+position = Vector2( 385, 834 )
+scale = Vector2( 7, 7 )
 texture = ExtResource( 7 )
 
 [node name="Background3" type="Sprite" parent="."]
-modulate = Color( 0, 0.156863, 1, 1 )
-position = Vector2( 561, 737 )
-scale = Vector2( 6, 6 )
+position = Vector2( 1495, -132 )
+scale = Vector2( 7, 7 )
 texture = ExtResource( 7 )
 
 [node name="Tween" type="Tween" parent="."]
@@ -42,22 +39,26 @@ curve = SubResource( 1 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 
-[node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -160, 73 )
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="ColorTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 200, 160 )
+position = Vector2( 636, 225 )
 __meta__ = {
 "_gizmo_extents_": 75.0
 }
@@ -68,12 +69,9 @@ stream = ExtResource( 5 )
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
-[node name="ColorTimer" type="Timer" parent="."]
-wait_time = 6.0
-autostart = true
-
-[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="exit_game" from="HUD" to="." method="_on_exit_game"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="ColorTimer" to="." method="_on_ColorTimer_timeout"]
