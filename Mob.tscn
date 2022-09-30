@@ -7,33 +7,42 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 24 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "dog",
-"speed": 5.0
+"speed": 6.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=35]
-extents = Vector2( 15.5, 18 )
+extents = Vector2( 23, 20 )
 
 [node name="Mob" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
 gravity_scale = 0.0
+linear_damp = 0.0
 script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 1 )
 animation = "dog"
-frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.99999, 9.5 )
-rotation = 1.5708
+position = Vector2( 0, 12 )
 shape = SubResource( 35 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -30, -19 )
 rect = Rect2( 0, 0, 60, 50 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -29.0
+margin_top = -35.0
+margin_right = 29.0
+margin_bottom = -21.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
