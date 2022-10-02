@@ -13,9 +13,7 @@ func _ready():
 	#update_game()
 	randomize()
 	load_best_score()
-
-	# this line confines the cursor to the game window
-	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	config_mouse_cursor()
 	_on_ColorTimer_timeout()
 
 
@@ -130,6 +128,14 @@ func load_best_score():
 		best_score = 0
 
 	save_file.close()
+
+
+func config_mouse_cursor():
+	# this line confines the cursor to the game window
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+
+	# set mouse position to player position. so cursor and player position synced
+	Input.warp_mouse_position($StartPosition.position)
 
 
 func _on_ColorTimer_timeout():
