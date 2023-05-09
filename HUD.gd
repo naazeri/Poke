@@ -52,7 +52,7 @@ func show_result():
 func show_about():
 	changeHUDItemsVisible(false)
 	$BackButton.show()
-	$MessageLabel.text = "Developer: Reza Nazeri\n\nWebsite: naazeri.com"
+	$MessageLabel.text = "Developer: Reza Nazeri\n\nWebsite: naazeri.ir"
 
 
 func show_message(text):
